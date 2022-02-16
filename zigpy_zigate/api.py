@@ -353,7 +353,7 @@ class ZiGate:
 
     async def version_int(self):
         version, lqi = await self.version()
-        return version[1]
+        return version[0], version[1]
 
     async def get_network_state(self):
         return await self.command(0x0009, wait_response=0x8009)
